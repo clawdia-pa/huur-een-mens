@@ -239,3 +239,6 @@ main {
 .faq-item { background: white; padding: 1.5rem; border-radius: 0.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
 .faq-item h3 { margin: 0 0 0.5rem; color: #667eea; }
 .faq-item p { margin: 0; color: #666; }
+
+.contact-form { max-width: 600px; margin-bottom: 2rem; }
+.contact-info { background: #f7fafc; padding: 1.5rem; border-radius: 0.5rem; }
