@@ -55,3 +55,153 @@ main {
 .cta h2 {
   margin-bottom: 0.5rem;
 }
+
+.header {
+  background: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: #667eea;
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav a {
+  color: #333;
+  text-decoration: none;
+}
+
+.btn-small {
+  background: #667eea;
+  color: white !important;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+}
+
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.page h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.code-section {
+  background: #1a1a2e;
+  color: #eee;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  margin: 1.5rem 0;
+  overflow-x: auto;
+}
+
+.code-section pre {
+  margin: 0;
+}
+
+.skills-grid {
+  margin: 2rem 0;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.skill-tag {
+  background: #e2e8f0;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.875rem;
+}
+
+.signup-form {
+  max-width: 400px;
+  margin: 2rem 0;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+}
+
+.footer {
+  background: #1a1a2e;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.footer-links {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.footer a {
+  color: #a0aec0;
+  text-decoration: none;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background: #667eea;
+  color: white;
+}
+
+.btn-secondary {
+  background: white;
+  color: #667eea;
+  border: 2px solid #667eea;
+}
