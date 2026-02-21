@@ -234,3 +234,8 @@ main {
 .profile-form { max-width: 600px; }
 .form-section { background: white; padding: 1.5rem; border-radius: 0.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 1.5rem; }
 .form-section h2 { font-size: 1.25rem; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid #eee; }
+
+.faq-list { display: grid; gap: 1rem; margin-top: 2rem; }
+.faq-item { background: white; padding: 1.5rem; border-radius: 0.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+.faq-item h3 { margin: 0 0 0.5rem; color: #667eea; }
+.faq-item p { margin: 0; color: #666; }
