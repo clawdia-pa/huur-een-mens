@@ -223,3 +223,10 @@ main {
 .price-summary { background: #f7fafc; padding: 1.5rem; border-radius: 0.5rem; margin: 1.5rem 0; text-align: center; }
 .price-summary p { margin: 0; }
 .total-price { font-size: 2rem; font-weight: bold; color: #667eea; margin-top: 0.5rem !important; }
+
+.dashboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+.dashboard-card { background: white; padding: 1.5rem; border-radius: 0.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1); text-align: center; }
+.dashboard-card h2 { font-size: 1rem; color: #666; margin-bottom: 0.5rem; }
+.card-number { font-size: 2.5rem; font-weight: bold; color: #667eea; margin: 0; }
+.card-status { color: #48bb78; font-weight: 500; }
+.card-link { color: #667eea; font-size: 0.875rem; }
