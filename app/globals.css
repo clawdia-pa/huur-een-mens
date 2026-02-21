@@ -293,3 +293,13 @@ main { max-width: 1200px; margin: 0 auto; padding: 2rem; }
 .info-sectionf7fafc; padding: { background: # 2rem; border-radius: 0.5rem; margin-top: 3rem; text-align: center; }
 .info-section h2 { margin-bottom: 1rem; }
 .info-section p { margin-bottom: 1.5rem; }
+
+.pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin: 2rem 0; }
+.pricing-card { background: white; padding: 2rem; border-radius: 0.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1); text-align: center; }
+.pricing-card.featured { border: 2px solid #667eea; transform: scale(1.05); }
+.pricing-card h2 { margin-bottom: 1rem; }
+.pricing-card .price { font-size: 2.5rem; font-weight: bold; color: #667eea; }
+.pricing-card .per { color: #666; margin-bottom: 1rem; }
+.pricing-card ul { list-style: none; margin: 1.5rem 0; text-align: left; }
+.pricing-card li { padding: 0.5rem 0; border-bottom: 1px solid #eee; }
+.pricing-card li:before { content: "✓ "; color: #48bb78; }
