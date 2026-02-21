@@ -216,3 +216,10 @@ main {
 .detail-section h2 { font-size: 1rem; margin-bottom: 0.5rem; color: #667eea; }
 .price { font-size: 1.5rem; font-weight: bold; color: #667eea; }
 .btn-large { display: block; text-align: center; padding: 1rem; font-size: 1.25rem; margin-top: 2rem; }
+
+.booking-form { max-width: 600px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.form-group textarea { width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 0.25rem; font-size: 1rem; font-family: inherit; resize: vertical; }
+.price-summary { background: #f7fafc; padding: 1.5rem; border-radius: 0.5rem; margin: 1.5rem 0; text-align: center; }
+.price-summary p { margin: 0; }
+.total-price { font-size: 2rem; font-weight: bold; color: #667eea; margin-top: 0.5rem !important; }
