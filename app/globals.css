@@ -284,3 +284,12 @@ main { max-width: 1200px; margin: 0 auto; padding: 2rem; }
 .form-footer { margin-top: 1rem; text-align: center; color: #666; }
 .form-footer a { color: #667eea; }
 .login-form .btn { width: 100%; margin-top: 1rem; }
+
+.steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin: 2rem 0; }
+.step { text-align: center; padding: 1.5rem; }
+.step-number { width: 50px; height: 50px; border-radius: 50%; background: #667eea; color: white; font-size: 1.5rem; font-weight: bold; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; }
+.step h2 { margin-bottom: 0.5rem; }
+.step p { color: #666; }
+.info-sectionf7fafc; padding: { background: # 2rem; border-radius: 0.5rem; margin-top: 3rem; text-align: center; }
+.info-section h2 { margin-bottom: 1rem; }
+.info-section p { margin-bottom: 1.5rem; }
