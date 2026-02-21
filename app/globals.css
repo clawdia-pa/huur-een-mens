@@ -230,3 +230,7 @@ main {
 .card-number { font-size: 2.5rem; font-weight: bold; color: #667eea; margin: 0; }
 .card-status { color: #48bb78; font-weight: 500; }
 .card-link { color: #667eea; font-size: 0.875rem; }
+
+.profile-form { max-width: 600px; }
+.form-section { background: white; padding: 1.5rem; border-radius: 0.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 1.5rem; }
+.form-section h2 { font-size: 1.25rem; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid #eee; }
