@@ -317,3 +317,6 @@ main { max-width: 1200px; margin: 0 auto; padding: 2rem; }
 .footer-links a:hover { color: white; }
 .footer-copyright { text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #333; }
 @media (max-width: 768px) { .footer-content { grid-template-columns: 1fr; } .footer-links { grid-template-columns: 1fr; } }
+
+.error-message { background: #fed7d7; color: #c53030; padding: 1rem; border-radius: 0.5rem; margin-bottom: 1rem; }
+.success-message { background: #c6f6d5; color: #22543d; padding: 1rem; border-radius: 0.5rem; margin-bottom: 1rem; }
