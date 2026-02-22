@@ -11,7 +11,6 @@ export default function Footer() {
             <h4>Service</h4>
             <a href="/mcp">MCP</a>
             <a href="/api-docs">API</a>
-            <a href="/pricing">Prijzen</a>
           </div>
           <div>
             <h4>Bedrijf</h4>
