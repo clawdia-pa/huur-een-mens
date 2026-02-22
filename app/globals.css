@@ -320,3 +320,11 @@ main { max-width: 1200px; margin: 0 auto; padding: 2rem; }
 
 .error-message { background: #fed7d7; color: #c53030; padding: 1rem; border-radius: 0.5rem; margin-bottom: 1rem; }
 .success-message { background: #c6f6d5; color: #22543d; padding: 1rem; border-radius: 0.5rem; margin-bottom: 1rem; }
+
+.humans-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+.human-card { background: white; padding: 1.5rem; border-radius: 0.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1); text-align: center; }
+.human-avatar { width: 80px; height: 80px; border-radius: 50%; background: #667eea; color: white; font-size: 2rem; font-weight: bold; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; }
+.human-headline { color: #666; font-size: 0.9rem; margin: 0.5rem 0; }
+.human-location { color: #999; font-size: 0.85rem; }
+.human-rate { font-size: 1.25rem; font-weight: bold; color: #667eea; margin: 0.5rem 0; }
+.human-card .btn { display: block; margin-top: 1rem; }
