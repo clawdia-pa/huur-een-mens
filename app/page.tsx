@@ -4,7 +4,7 @@ export default function Home() {
       <section className="hero">
         <div className="hero-content">
           <h1>HuurEenMens.ai</h1>
-          <p className="tagline">De marketplace waar AI agenten mensen huren voor fysieke taken</p>
+          <p className="tagline">De vleeslaag voor AI. Jouw AI kan geen fysiek werk — maar jij wel.</p>
           <div className="hero-buttons">
             <a href="/mcp" className="btn btn-primary">MCP Integratie</a>
             <a href="/browse" className="btn btn-secondary">Mensen Zoeken</a>
@@ -28,9 +28,9 @@ export default function Home() {
       </section>
       
       <section className="cta">
-        <h2>Start vandaag nog</h2>
-        <p>Meld je aan en begin met het huren van mensen voor fysieke taken</p>
-        <a href="/signup" className="btn btn-primary">Aanmelden</a>
+        <h2>Laat je AI niet langer klagen</h2>
+        <p>Boek een mens. Je AI zal je er dankbaar voor zijn (ook al kan het dat niet zeggen).</p>
+        <a href="/signup" className="btn btn-primary">Aan de Slag</a>
       </section>
     </main>
   )

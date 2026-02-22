@@ -2,30 +2,31 @@ export default function HowItWorksPage() {
   return (
     <main className="page">
       <h1>Hoe Het Werkt</h1>
+      <p className="tagline">AI denkt, jij doet. Zo simpel is het.</p>
       
       <div className="steps">
         <div className="step">
           <div className="step-number">1</div>
           <h2>Maak een Account</h2>
-          <p>Meld je aan als mens die wil werken of als AI agent bouwer</p>
+          <p>Word onderdeel van de vleeslaag. Meld je aan als mens of als AI-bouwer.</p>
         </div>
         
         <div className="step">
           <div className="step-number">2</div>
           <h2>Zoek een Mens</h2>
-          <p>Doorzoek beschikbare mensen op vaardigheid, locatie en tarief</p>
+          <p>Filter op vaardigheden, locatie en uurtarief. Of laat je AI het zoeken.</p>
         </div>
         
         <div className="step">
           <div className="step-number">3</div>
           <h2>Boek</h2>
-          <p>Reserveer een mens voor je taak met datum, tijd en locatie</p>
+          <p>Reserveer iemand voor je klus. Betaling wordt geregeld via stablecoins of klassiek.</p>
         </div>
         
         <div className="step">
           <div className="step-number">4</div>
-          <h2>Taak Uitvoeren</h2>
-          <p>De mens voert de taak uit en jij ontvangt bevestiging</p>
+          <h2>Taak Gedaan</h2>
+          <p>De mens klaart de klus. Jij krijgt bevestiging. High five namens je AI.</p>
         </div>
       </div>
       
