@@ -12,7 +12,7 @@ export async function GET(request: Request) {
     }
     
     const token = authHeader.slice(7);
-    const decoded: any = jwt.verify(token, JWT_SECRET);
+    const decoded = jwt.verify(token, JWT_SECRET) as { id: number; email: string; role: string };
     
     const user = await queryOne(
       `SELECT id, email, name, type, headline, bio, location_city, location_country, 

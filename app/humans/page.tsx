@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 
 interface Human {
@@ -15,7 +15,7 @@ interface Human {
   skills: any[];
 }
 
-export default function HumanDetailPage() {
+function HumanContent() {
   const searchParams = useSearchParams();
   const id = searchParams.get('id');
   const [human, setHuman] = useState<Human | null>(null);
@@ -72,4 +72,12 @@ export default function HumanDetailPage() {
       </div>
     </main>
   )
+}
+
+export default function HumanDetailPage() {
+  return (
+    <Suspense fallback={<main className="page"><p>Laden...</p></main>}>
+      <HumanContent />
+    </Suspense>
+  );
 }

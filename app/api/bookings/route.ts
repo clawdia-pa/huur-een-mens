@@ -10,7 +10,7 @@ function getUserFromToken(request: Request) {
   
   const token = authHeader.slice(7);
   try {
-    return jwt.verify(token, JWT_SECRET);
+    return jwt.verify(token, JWT_SECRET) as { id: number; email: string; role: string };
   } catch {
     return null;
   }
