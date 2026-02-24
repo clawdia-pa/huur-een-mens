@@ -1,3 +1,4 @@
+// MCP Integration Page
 export default function MCPPage() {
   return (
     <main className="page">
