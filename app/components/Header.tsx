@@ -12,7 +12,6 @@ export default function Header() {
         <nav className="nav">
           <a href="/browse">Mensen Zoeken</a>
           <a href="/how-it-works">Hoe het werkt</a>
-          <a href="/pricing">Prijzen</a>
           <a href="/mcp">MCP</a>
           <a href="/api-docs">API</a>
           {user ? (

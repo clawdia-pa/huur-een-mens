@@ -1,45 +1,21 @@
-import sqlite3 from 'sqlite3';
-import path from 'path';
+import { createClient } from '@libsql/client';
 
-const dbPath = path.join(process.cwd(), 'db', 'huur-een-mens.db');
+const client = createClient({
+  url: process.env.TURSO_DATABASE_URL || 'file:db/huur-een-mens.db',
+  authToken: process.env.TURSO_AUTH_TOKEN,
+});
 
-export function getDb() {
-  return new sqlite3.Database(dbPath, (err) => {
-    if (err) {
-      console.error('Database connection error:', err.message);
-    }
-  });
+export async function queryAll(sql: string, params: any[] = []): Promise<any[]> {
+  const result = await client.execute({ sql, args: params });
+  return result.rows as any[];
 }
 
-export function queryAll(sql: string, params: any[] = []): Promise<any[]> {
-  return new Promise((resolve, reject) => {
-    const db = getDb();
-    db.all(sql, params, (err, rows) => {
-      if (err) reject(err);
-      else resolve(rows);
-      db.close();
-    });
-  });
+export async function queryOne(sql: string, params: any[] = []): Promise<any> {
+  const result = await client.execute({ sql, args: params });
+  return (result.rows[0] as any) || null;
 }
 
-export function queryOne(sql: string, params: any[] = []): Promise<any> {
-  return new Promise((resolve, reject) => {
-    const db = getDb();
-    db.get(sql, params, (err, row) => {
-      if (err) reject(err);
-      else resolve(row);
-      db.close();
-    });
-  });
-}
-
-export function run(sql: string, params: any[] = []): Promise<any> {
-  return new Promise((resolve, reject) => {
-    const db = getDb();
-    db.run(sql, params, function(err) {
-      if (err) reject(err);
-      else resolve({ lastID: this.lastID, changes: this.changes });
-      db.close();
-    });
-  });
+export async function run(sql: string, params: any[] = []): Promise<any> {
+  const result = await client.execute({ sql, args: params });
+  return { lastID: result.lastInsertRowid, changes: result.rowsAffected };
 }

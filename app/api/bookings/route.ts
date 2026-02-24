@@ -1,3 +1,6 @@
+export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
+
 import { NextResponse } from 'next/server';
 import { queryAll, queryOne, run } from '@/lib/db';
 import jwt from 'jsonwebtoken';
@@ -10,7 +13,7 @@ function getUserFromToken(request: Request) {
   
   const token = authHeader.slice(7);
   try {
-    return jwt.verify(token, JWT_SECRET);
+    return jwt.verify(token, JWT_SECRET) as any;
   } catch {
     return null;
   }

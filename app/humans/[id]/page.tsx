@@ -1,7 +1,7 @@
 'use client';
 
-import { useState, useEffect, Suspense } from 'react';
-import { useSearchParams } from 'next/navigation';
+import { useState, useEffect } from 'react';
+import { useParams } from 'next/navigation';
 
 interface Human {
   id: string;
@@ -15,9 +15,9 @@ interface Human {
   skills: any[];
 }
 
-function HumanDetail() {
-  const searchParams = useSearchParams();
-  const id = searchParams.get('id');
+export default function HumanProfilePage() {
+  const params = useParams();
+  const id = params.id as string;
   const [human, setHuman] = useState<Human | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -35,7 +35,7 @@ function HumanDetail() {
   }, [id]);
 
   if (loading) return <main className="page"><p>Laden...</p></main>;
-  if (!human) return <main className="page"><h1>Mens niet gevonden</h1></main>;
+  if (!human) return <main className="page"><h1>Mens niet gevonden</h1><p>Dit profiel bestaat niet of is niet meer beschikbaar.</p><a href="/browse" className="btn btn-primary">Terug naar zoeken</a></main>;
 
   return (
     <main className="page">
@@ -59,9 +59,9 @@ function HumanDetail() {
         <div className="detail-section">
           <h2>Vaardigheden</h2>
           <div className="skills">
-            {human.skills?.map((s: any) => (
+            {human.skills?.length > 0 ? human.skills.map((s: any) => (
               <span key={s.id} className="skill-tag">{s.name}</span>
-            )) || <p>Geen vaardigheden</p>}
+            )) : <p>Geen vaardigheden</p>}
           </div>
         </div>
         <div className="detail-section">
@@ -72,12 +72,4 @@ function HumanDetail() {
       </div>
     </main>
   )
-}
-
-export default function HumanDetailPage() {
-  return (
-    <Suspense fallback={<main className="page"><p>Laden...</p></main>}>
-      <HumanDetail />
-    </Suspense>
-  );
 }
