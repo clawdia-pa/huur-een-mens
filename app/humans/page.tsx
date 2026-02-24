@@ -15,7 +15,7 @@ interface Human {
   skills: any[];
 }
 
-function HumanDetail() {
+function HumanContent() {
   const searchParams = useSearchParams();
   const id = searchParams.get('id');
   const [human, setHuman] = useState<Human | null>(null);
@@ -77,7 +77,7 @@ function HumanDetail() {
 export default function HumanDetailPage() {
   return (
     <Suspense fallback={<main className="page"><p>Laden...</p></main>}>
-      <HumanDetail />
+      <HumanContent />
     </Suspense>
   );
 }
