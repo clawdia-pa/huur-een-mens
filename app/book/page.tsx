@@ -5,7 +5,6 @@ import { useSearchParams } from 'next/navigation';
 import { useAuth } from '../context/AuthContext';
 import { createWalletClient, custom } from 'viem';
 import { baseSepolia } from 'viem/chains';
-import CoinbaseWalletSDK from '@coinbase/wallet-sdk';
 import { wrapFetchWithPayment } from 'x402-fetch';
 
 interface Human {
@@ -57,14 +56,12 @@ function BookingForm() {
     setError('');
     setWalletStatus('Wallet verbinden...');
     try {
-      const sdk = new CoinbaseWalletSDK({
-        appName: 'HuurEenMens',
-      });
+      const ethereum = (window as any).ethereum;
+      if (!ethereum) {
+        throw new Error('Geen wallet gevonden. Installeer MetaMask of een andere wallet extensie.');
+      }
 
-      const provider = sdk.makeWeb3Provider();
-      providerRef.current = provider;
-
-      const accounts = await provider.request({
+      const accounts = await ethereum.request({
         method: 'eth_requestAccounts',
       }) as string[];
 
@@ -78,7 +75,7 @@ function BookingForm() {
       const client = createWalletClient({
         account: address as `0x${string}`,
         chain: baseSepolia,
-        transport: custom(provider),
+        transport: custom(ethereum),
       });
       walletClientRef.current = client;
 
@@ -190,7 +187,7 @@ function BookingForm() {
           <div>
             <p style={{ margin: '0 0 0.5rem 0' }}>Verbind je wallet om te betalen met USDC op Base</p>
             <button type="button" onClick={connectWallet} className="btn btn-secondary" disabled={walletStatus === 'Wallet verbinden...'}>
-              {walletStatus || 'Verbind Coinbase Wallet'}
+              {walletStatus || 'Verbind Wallet'}
             </button>
           </div>
         )}
@@ -230,7 +227,7 @@ function BookingForm() {
 
         <div className="price-summary">
           <p>Totaalprijs:</p>
-          <p className="total-price">$1.00 USDC</p>
+          <p className="total-price">$0.01 USDC</p>
           <p style={{ fontSize: '0.875rem', color: '#666' }}>Betaling via Base netwerk</p>
         </div>
 
