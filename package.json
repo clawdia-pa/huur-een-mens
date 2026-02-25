@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@coinbase/wallet-sdk": "^4.3.7",
     "@libsql/client": "^0.17.0",
     "bcryptjs": "^3.0.3",
     "jsonwebtoken": "^9.0.3",
@@ -16,6 +17,7 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "viem": "^2.46.3",
+    "x402-fetch": "^1.1.0",
     "x402-next": "^1.1.0"
   },
   "devDependencies": {
