@@ -1,16 +1,18 @@
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
+import { withX402 } from 'x402-next';
 import { queryAll, queryOne, run } from '@/lib/db';
 import jwt from 'jsonwebtoken';
 
 const JWT_SECRET = process.env.JWT_SECRET || 'huur-een-mens-secret-key-change-in-production';
+const SELLER_WALLET = (process.env.X402_SELLER_WALLET || '0x0000000000000000000000000000000000000000') as `0x${string}`;
 
 function getUserFromToken(request: Request) {
   const authHeader = request.headers.get('authorization');
   if (!authHeader?.startsWith('Bearer ')) return null;
-  
+
   const token = authHeader.slice(7);
   try {
     return jwt.verify(token, JWT_SECRET) as any;
@@ -57,8 +59,8 @@ export async function GET(request: Request) {
   }
 }
 
-// POST /api/bookings - Create a booking
-export async function POST(request: Request) {
+// POST /api/bookings - Create a booking (protected by x402 USDC payment)
+const postHandler = async (request: NextRequest): Promise<NextResponse<any>> => {
   try {
     const user = getUserFromToken(request);
     if (!user) {
@@ -90,7 +92,20 @@ export async function POST(request: Request) {
     console.error('Error creating booking:', error);
     return NextResponse.json({ success: false, error: error.message }, { status: 500 });
   }
-}
+};
+
+export const POST = withX402(
+  postHandler,
+  SELLER_WALLET,
+  {
+    price: '$1.00',
+    network: 'base-sepolia',
+    config: {
+      description: 'Book a human on HuurEenMens - pay with USDC on Base',
+    },
+  },
+  { url: 'https://x402.org/facilitator' as `https://${string}` },
+);
 
 // PATCH /api/bookings - Update booking status
 export async function PATCH(request: Request) {
