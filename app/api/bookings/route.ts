@@ -98,7 +98,7 @@ export const POST = withX402(
   postHandler,
   SELLER_WALLET,
   {
-    price: '$1.00',
+    price: '$0.01',
     network: 'base-sepolia',
     config: {
       description: 'Book a human on HuurEenMens - pay with USDC on Base',
